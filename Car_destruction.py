@@ -22,8 +22,12 @@ class Player:
         self.cor = cor
         self.cor_parede = cor_parede
         self.j = 1
-        self.x_ant = x
-        self.y_ant = y
+        self.x_ant_1 = x
+        self.y_ant_1 = y
+        self.x_ant_2 = x
+        self.y_ant_2 = y
+        self.x_ant_3 = x
+        self.y_ant_3 = y
 
     def mover(self):
         temp_x = int(self.x)
@@ -33,10 +37,16 @@ class Player:
         #x entre 140 e 500 y entre 180 e 460
 
         if self.j > 1:
-            self.x_ant = self.x
-            self.y_ant = self.y
+            self.x_ant_1 = self.x_ant_2
+            self.y_ant_1 = self.y_ant_2
+            self.x_ant_2 = self.x_ant_3
+            self.y_ant_2 = self.y_ant_3
+            self.x_ant_3 = self.x
+            self.y_ant_3 = self.y
 
-            pygame.draw.rect(fundo, self.cor_parede, [self.x_ant, self.y_ant, 15, 15])
+            pygame.draw.rect(fundo, self.cor_parede, [self.x_ant_1, self.y_ant_1, 15, 15])
+            pygame.draw.rect(fundo, self.cor_parede, [self.x_ant_2, self.y_ant_2, 15, 15])
+            pygame.draw.rect(fundo, self.cor_parede, [self.x_ant_3, self.y_ant_3, 15, 15])
           
         self.j +=1
         
@@ -72,7 +82,7 @@ class Player:
 
 #player 1
 p1 = Player(140, 180, azul_claro, preto)
-###player 2
+#player 2
 p2 = Player(500, 460, vermelho, preto)
 
 #criação da tela
