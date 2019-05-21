@@ -1,0 +1,4 @@
+Dependências
+
+python3 -m pip install pygame --user
+sudo apt-get install python
