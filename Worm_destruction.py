@@ -140,8 +140,6 @@ fundo = pygame.display.set_mode((largura, altura));
 #nome da tela e icone
 pygame.display.set_caption("Worm destruction");
 
-img = pygame.image.load("img.png")
-
 #criar cenario
 def criar_cenario():
     pygame.draw.lines(fundo, preto,False, [(120,160),(120,480),(520,480),(520,160),(120,160)], 5)
